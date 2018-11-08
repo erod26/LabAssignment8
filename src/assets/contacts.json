@@ -1,0 +1,28 @@
+[
+    {
+        "id":1,
+        "firstName": "Eric",
+        "lastName" : "Rodriguez",
+        "email": "vlankey@gmail.com",
+        "phone": "(559) 123-4567",
+        "editing": false
+    },
+    {
+        "id":2,
+        "firstName": "Issac",
+        "lastName" : "Osle",
+        "email": "randdad@gmail.com",
+        "phone": "(559) 234-5678",
+        "editing": false
+
+    },
+    {
+        "id":3,
+        "firstName": "Jeremy",
+        "lastName" : "Hammond",
+        "email": "prison@gmail.com",
+        "phone": "(559) 345-6789",
+        "editing": false
+
+    }
+]
