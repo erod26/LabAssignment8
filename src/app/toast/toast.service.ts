@@ -9,7 +9,7 @@ export class ToastService {
   toastChanged: Subject<any> = new Subject<any>();
   constructor() { }
 
-  showToast(type: string, timeout: number, message: string, ) {
+  showToast(type: string, timeout: number, message: string,) {
     this.toastChanged.next({
       type: type,
       timeout: timeout,

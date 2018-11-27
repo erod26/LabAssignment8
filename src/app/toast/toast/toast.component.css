@@ -4,4 +4,8 @@
     right: 20px;
     top: 20px;
     width: right;
+    z-index: 9999;
 }
+
+/*z-index: 9999; is so that the alert is kept in the back, and will always show up in front
+first. */

@@ -56,7 +56,13 @@ export class ContactComponent implements OnInit {
   }
 
   addContact() {
-    this.contacts.unshift(new Contact({}));
+    this.contacts.unshift(new Contact({
+      id: null,
+      firstName: null,
+      lastName: null,
+      phone: null,
+      email: null
+    }));
   }
 
   deleteContact(index: number) {
@@ -65,8 +71,25 @@ export class ContactComponent implements OnInit {
   }
 
   saveContact(contact: any) {
-    contact.editing = false;
-    this.saveItemsToLocalStorage(this.contacts);
+    let hasError = false;
+
+    // const id = contact['id'];
+    // const firstName = contact.firstName;
+    // const lastName = contact.lastName;
+    //The top here you can write it all out..or see below for a shorter one (use what works for you!)
+
+    Object.keys(contact).forEach((key: any) => {
+      if (contact[key] == null) {
+        hasError = true;
+        this.toastService.showToast('danger', 2000,`Saved failed! ${key} must not be null!`);
+      //Do you see this line above? Without the ` (button next to 1 on top numpad), the key
+      //button would not BE BLUE! I almost spent a ton of time worrying about this......
+      }
+    });
+    if (!hasError) {
+      contact.editing = false;
+      this.saveItemsToLocalStorage(this.contacts);
+    } 
   }
 
   saveItemsToLocalStorage(contacts: Array<Contact>) {
