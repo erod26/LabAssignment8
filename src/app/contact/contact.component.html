@@ -15,10 +15,17 @@
       <li class="nav-item active">
         <a class="nav-link" href="#">Contacts <span class="sr-only">(current)</span></a>
       </li>
+      <li class="nav-item active">
+        <a class="nav-link" href="#">Nice to see you {{currentUser.username}}!</a>
+      </li>
+
     </ul>
     <form class="form-inline my-2 my-lg-0">
       <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" [(ngModel)]="contactParams" name="search">
-      <button class="btn btn-outline-success my-2 my-sm-0" type="submit" (click)="searchContact(contactParams)">Search</button>
+      <div class="btn-group">
+        <button class="btn btn-outline-success my-2 my-sm-0" type="submit" (click)="searchContact(contactParams)">Search</button>
+        <button class="btn btn-outline-success my-2 my-sm-0" type="submit" (click)="logout()">Logout</button>
+      </div>
     </form>
   </div>
 </nav>
@@ -87,7 +94,7 @@
         </td>
         <td *ngIf="contact.editing">
           <div class="btn-group">
-<!--Stopped at 40mins 11/13/18 2:06AM-->
+            <!--Stopped at 40mins 11/13/18 2:06AM-->
             <button type="button" class="btn btn-success contact-button" (click)="saveContact(contact)">Save</button>
             <button type="button" class="btn btn-danger contact-button" (click)="deleteContact(i)">X</button>
           </div>
